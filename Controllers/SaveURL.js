@@ -8,7 +8,7 @@ export const SaveURL = async(req,res) => {
         const shortId = generateShortId(7);
         const newURL = new URLs({ longUrl: longUrl, shortID: shortId });
         await newURL.save();
-        const shortURL = `http://localhost:5050/${shortId}`;
+        const shortURL = `https://tinyurl-server-production-9877.up.railway.app/${shortId}`;
         res.status(200).json({
             ok: true,
             shortURL: shortURL,
